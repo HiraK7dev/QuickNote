@@ -48,13 +48,13 @@ function Card({ crdVal, text, isEditable, id }) {
       <div style={{backgroundColor: crdColor[crdVal]}} className="card w-72 text-primary-content aspect-square m-6 ml-1">
         <div className="flex flex-col justify-between card-body">
           {
-            isEditable ? <textarea className="bg-transparent h-44 max-h-44 min-h-44 overflow-x-hidden focus:outline-none" type="text" value={tempText} onChange={handleonChange}></textarea> : <p className="text-black">{ text }</p>
+            isEditable ? <textarea className="bg-transparent h-44 max-h-44 min-h-44 overflow-x-hidden focus:outline-none" type="text" value={tempText} onChange={handleonChange}></textarea> : <p className="text-black h-44 max-h-44 min-h-44">{ text }</p>
           }
           <div className="card-actions justify-end">
             {
-              isEditable ? <button onClick={saveCard} className="btn btn-sm">Save</button> : <button onClick={editCard} className="btn btn-sm">Edit</button>
+              isEditable ? <button onClick={saveCard} className="btn btn-sm btn-outline">Save</button> : <button onClick={editCard} className="btn btn-sm btn-outline">Edit</button>
             }
-            <button id={id} onClick={deleteCard} className="btn btn-sm">Delete</button>
+            <button id={id} onClick={deleteCard} className="btn btn-sm btn-outline">Delete</button>
           </div>
         </div>
       </div>

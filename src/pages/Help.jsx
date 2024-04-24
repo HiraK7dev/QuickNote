@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar'
 
 function Help() {
   return (
-    <div>
+    <div className='flex justify-start'>
       <Sidebar/>
     </div>
   )
