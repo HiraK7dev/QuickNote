@@ -22,7 +22,7 @@ function Sidebar() {
     <>
       <div className="flex flex-col justify-center items-center h-screen w-40 min-w-40 fixed z-10">
         <div className="flex flex-col justify-start items-center w-[75%] h-[95%] bg-slate-300 rounded-3xl pt-3">
-        <h1 className="text-sm font-bold font-sans mt-4 mb-4">Quick Note</h1>
+        <NavLink to='/'><h1 className="text-sm font-bold font-sans mt-4 mb-4">Quick Note</h1></NavLink>
         {/* <button className="btn btn-natural btn-outline mt-4 mb-4">CREATE</button> */}
         <button
           className="btn btn-active btn-neutral mt-4 mb-4"
