@@ -78,36 +78,7 @@ function Sidebar() {
           </div>
         </dialog>
         <div className="flex flex-col justify-end items-center w-full h-3/4 mt-4 mb-4">
-          {/* <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "font-bold mt-3 text-xs tracking-wider"
-                : "font-normal mt-3 text-xs tracking-wider"
-            }
-            to="/"
-          >
-            HOME
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "font-bold mt-3 text-xs tracking-wider"
-                : "font-normal mt-3 text-xs tracking-wider"
-            }
-            to="/help"
-          >
-            HELP
-          </NavLink>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "font-bold mt-3 text-xs tracking-wider"
-                : "font-normal mt-3 text-xs tracking-wider"
-            }
-            to="/about"
-          >
-            ABOUT
-          </NavLink> */}
+          {/* NavLinks */}
           <ul className="menu rounded-box">
             <li>
               <NavLink to="/">

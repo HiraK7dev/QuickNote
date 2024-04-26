@@ -25,7 +25,7 @@ function Card({ crdVal, text, isEditable, id }) {
     deleted();
   }
   function saveCard(event){
-    setnoteList(noteList.map((val) => {
+    setnoteList(noteList => noteList.map((val) => {
       if (val.id == event.target.nextSibling.id) {
         return {
           ...val, text: tempText, isEditable: false
@@ -34,7 +34,7 @@ function Card({ crdVal, text, isEditable, id }) {
       else {
         return val
       }
-    }))
+    }));
     saved();
   }
   function editCard(event){
