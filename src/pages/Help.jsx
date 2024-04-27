@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "../components/Sidebar";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ChatReply from "../components/ChatReply";
@@ -8,9 +8,11 @@ function Help() {
   const [prompt, setPrompt] = useState(``);
   const [chat, setChat] = useState([]);
 
+  const messagesEndRef = useRef(null);
+
   useEffect(() => {
-    console.log(chat);
-  }, [chat])
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  }, [chat]);
 
   async function handlePrompt(event){
     event.preventDefault();
@@ -23,6 +25,7 @@ function Help() {
       }
     ]);
     run();
+    setPrompt(``);
   }
 
   
@@ -68,6 +71,7 @@ function Help() {
                 );
               })
             )}
+            <div ref={messagesEndRef} />
           </div>
           {/* Input Field */}
           <form className="flex justify-around items-center w-full h-20" onSubmit={handlePrompt}>
