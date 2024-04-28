@@ -56,11 +56,17 @@ function Help() {
     <div className="flex justify-start">
       <Sidebar />
       <div className="flex justify-center items-center h-screen w-full">
-        <div className="flex flex-col justify-end items-center bg-slate-200 h-[95%] w-[98%] rounded-3xl p-6">
-          <div className="h-full w-[98%] m-3 overflow-y-auto">
+        <div className="flex flex-col justify-end items-center h-[95%] w-[98%] rounded-3xl p-6">
+          <div className="h-full w-[900px] m-3 overflow-y-auto">
             {/* Chat Bubbles */}
             {chat.length == 0 ? (
-              <h1>Hello</h1>
+              <div className="flex flex-col justify-center items-center h-full w-full">
+                <h1 className="bg-gradient-to-r from-amber-500 to-pink-500 inline-block text-transparent bg-clip-text font-medium text-5xl">Hello, User</h1>
+                <br/>
+                <div className="w-[65%] flex justify-center items-center">
+                <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-black pr-5 text-5xl text-black font-medium opacity-25">How can I help you today?</h1>
+                </div>
+              </div>
             ) : (
               chat.map((item) => {
                 return (
@@ -74,15 +80,15 @@ function Help() {
             <div ref={messagesEndRef} />
           </div>
           {/* Input Field */}
-          <form className="flex justify-around items-center w-full h-20" onSubmit={handlePrompt}>
+          <form className="flex justify-around items-center w-[900px] h-20" onSubmit={handlePrompt}>
             <input
               onChange={(event) => {setPrompt(event.target.value)}}
               value={prompt}
               type="text"
-              placeholder="Message Ai..."
-              className="input input-bordered bg-transparent w-[90%]"
+              placeholder="Enter a prompt here"
+              className="input input-bordered bg-transparent w-[85%]"
             />
-            <button className="btn btn-active btn-neutral w-[8%]">
+            <button className="btn btn-active btn-neutral w-[12%]">
               Submit
             </button>
           </form>
