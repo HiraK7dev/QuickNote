@@ -28,8 +28,7 @@ function Help() {
     setPrompt(``);
   }
 
-  
-  const genAI = new GoogleGenerativeAI(API_KEY);
+  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
 
   async function run() {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
