@@ -8,8 +8,8 @@ function Card({ crdVal, text, isEditable, id }) {
   const [tempText, settempText] = useState(``);
   const { noteList, setnoteList } = useContext(Notes);
 
-  const str = text?.split(` `);
-  const str2 = str?.splice(0, 28).join(` `);
+  // const str = text?.split(` `);
+  // const str2 = str?.splice(0, 28).join(` `);
 
   useEffect(() => {
     settempText(text);
@@ -76,7 +76,7 @@ function Card({ crdVal, text, isEditable, id }) {
               onChange={handleonChange}
             ></textarea>
           ) : (
-            <p className="text-black h-44 max-h-44 min-h-44 overflow-y-auto">{str2}</p>
+            <p className="text-black h-[170px] max-h-[170px] min-h-[170px] overflow-y-auto">{text}</p>
           )}
           <div className="card-actions justify-end">
             <View modalId={id} modalText={text} />
