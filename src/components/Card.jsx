@@ -4,7 +4,14 @@ import { toast } from "react-toastify";
 import View from "./View";
 
 function Card({ crdVal, text, isEditable, id }) {
-  const crdColor = [`#B388EB`, `#FF6B6B`, `#5DD39E`, `#11B5E4`, `#E5B181`, `#9ABD97`];
+  const crdColor = [
+    `#B388EB`,
+    `#FF6B6B`,
+    `#5DD39E`,
+    `#11B5E4`,
+    `#E5B181`,
+    `#9ABD97`,
+  ];
   const [tempText, settempText] = useState(``);
   const { noteList, setnoteList } = useContext(Notes);
 
@@ -20,7 +27,7 @@ function Card({ crdVal, text, isEditable, id }) {
     settempText(value);
   }
   function deleteCard(event) {
-    setnoteList(noteList =>
+    setnoteList((noteList) =>
       noteList.filter((val) => {
         return val.id != event.target.id;
       })
@@ -29,7 +36,7 @@ function Card({ crdVal, text, isEditable, id }) {
     settempText(`Write your note here...`);
   }
   function saveCard(event) {
-    setnoteList(noteList =>
+    setnoteList((noteList) =>
       noteList.map((val) => {
         if (val.id == event.target.nextSibling.id) {
           return {
@@ -45,7 +52,7 @@ function Card({ crdVal, text, isEditable, id }) {
     saved();
   }
   function editCard(event) {
-    setnoteList(noteList =>
+    setnoteList((noteList) =>
       noteList.map((val) => {
         if (val.id == event.target.nextSibling.id) {
           return {
@@ -73,7 +80,9 @@ function Card({ crdVal, text, isEditable, id }) {
               onChange={handleonChange}
             ></textarea>
           ) : (
-            <p className="text-black h-[170px] max-h-[170px] min-h-[170px] overflow-y-auto">{text}</p>
+            <p className="text-black h-[170px] max-h-[170px] min-h-[170px] overflow-y-auto">
+              {text}
+            </p>
           )}
           <div className="card-actions justify-end">
             <View modalId={id} modalText={text} />
@@ -86,17 +95,30 @@ function Card({ crdVal, text, isEditable, id }) {
               </button>
             ) : (
               <>
-                <button
-                  className="btn btn-sm glass"
-                  onClick={() =>
-                    document.getElementById(id + `modal`).showModal()
-                  }
-                >
-                  View
-                </button>
+                {crdVal === `5` ? (
+                  <button
+                    className="btn btn-sm glass text-[11px]"
+                    onClick={() =>
+                      document.getElementById(id + `modal`).showModal()
+                    }
+                  >
+                    AI GENERATED
+                  </button>
+                ) : (
+                  <>
+                    <button
+                      className="btn btn-sm glass text-xs"
+                      onClick={() =>
+                        document.getElementById(id + `modal`).showModal()
+                      }
+                    >
+                      View
+                    </button>
+                  </>
+                )}
                 <button
                   onClick={editCard}
-                  className="btn btn-sm btn-active btn-neutral"
+                  className="btn btn-sm btn-active btn-neutral text-xs"
                 >
                   Edit
                 </button>
@@ -105,7 +127,7 @@ function Card({ crdVal, text, isEditable, id }) {
             <button
               id={id}
               onClick={deleteCard}
-              className="btn btn-sm btn-active btn-neutral"
+              className="btn btn-sm btn-active btn-neutral text-xs"
             >
               Delete
             </button>

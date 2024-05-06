@@ -5,10 +5,10 @@ function ChatReply({ text }) {
   const { noteList, setnoteList } = useContext(Notes);
   const mainButton = useRef(null);
   function addtoNote(event) {
-    const { id, innerText } = event.target;
+    const { id } = event.target;
     mainButton.current.disabled = true;
     mainButton.current.innerText = `ADDED`;
-      setnoteList([
+      setnoteList(noteList => [
         ...noteList,
         {
           id: Date.now(),
@@ -27,7 +27,7 @@ function ChatReply({ text }) {
           <>
             <div>{text}</div>
             <button
-              onClick={(event) => document.getElementById("help_modal").showModal()}
+              onClick={() => document.getElementById("help_modal").showModal()}
               className="btn btn-primary btn-active btn-xs mt-2 mb-2"
               ref={mainButton}
             >
