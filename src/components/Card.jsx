@@ -4,12 +4,9 @@ import { toast } from "react-toastify";
 import View from "./View";
 
 function Card({ crdVal, text, isEditable, id }) {
-  const crdColor = [`#B388EB`, `#FF6B6B`, `#5DD39E`, `#11B5E4`, `#E5B181`];
+  const crdColor = [`#B388EB`, `#FF6B6B`, `#5DD39E`, `#11B5E4`, `#E5B181`, `#9ABD97`];
   const [tempText, settempText] = useState(``);
   const { noteList, setnoteList } = useContext(Notes);
-
-  // const str = text?.split(` `);
-  // const str2 = str?.splice(0, 28).join(` `);
 
   useEffect(() => {
     settempText(text);
