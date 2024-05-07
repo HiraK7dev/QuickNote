@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { Notes } from "../context/NoteContext";
 
 function ChatReply({ text }) {
@@ -18,6 +18,12 @@ function ChatReply({ text }) {
         },
       ]);
   }
+
+  useEffect(() => {
+    localStorage.setItem(`note`, JSON.stringify(noteList));
+    console.log(`Local Storage updated`);
+  }, [noteList])
+
   return (
     <div className="chat chat-start m-4">
       <div className="chat-bubble chat-bubble-primary shadow-xl">
@@ -58,24 +64,12 @@ function ChatReply({ text }) {
                       style={{ backgroundColor: `#FF6B6B` }}
                       className="btn m-1 aspect-square"
                     ></button>
-                    {/* <button
-                      id="2"
-                      onClick={addtoNote}
-                      style={{ backgroundColor: `#5DD39E` }}
-                      className="btn m-1 aspect-square"
-                    ></button> */}
                     <button
                       id="3"
                       onClick={addtoNote}
                       style={{ backgroundColor: `#11B5E4` }}
                       className="btn m-1 aspect-square"
                     ></button>
-                    {/* <button
-                      id="4"
-                      onClick={addtoNote}
-                      style={{ backgroundColor: `#E5B181` }}
-                      className="btn m-1 aspect-square"
-                    ></button> */}
                     <button
                       id="5"
                       onClick={addtoNote}
