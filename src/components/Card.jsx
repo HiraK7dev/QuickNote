@@ -85,7 +85,7 @@ function Card({ crdVal, text, isEditable, id }) {
             </p>
           )}
           <div className="card-actions justify-end">
-            <View modalId={id} modalText={text} />
+            <View modalId={id} modalText={text} crdVal={crdVal}/>
             {isEditable ? (
               <button
                 onClick={saveCard}
