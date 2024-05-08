@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect } from "react";
 import { Notes } from "../context/NoteContext";
 
-function ChatReply({ text }) {
+function ChatReply({ text, uniqueID }) {
   const { noteList, setnoteList } = useContext(Notes);
   const mainButton = useRef(null);
   function addtoNote(event) {
@@ -21,7 +21,6 @@ function ChatReply({ text }) {
 
   useEffect(() => {
     localStorage.setItem(`note`, JSON.stringify(noteList));
-    console.log(`Local Storage updated`);
   }, [noteList])
 
   return (
@@ -33,14 +32,14 @@ function ChatReply({ text }) {
           <>
             <div>{text}</div>
             <button
-              onClick={() => document.getElementById("help_modal").showModal()}
+              onClick={() => document.getElementById(`modal + ${uniqueID}`).showModal()}
               className="btn btn-primary btn-active btn-xs mt-2 mb-2"
               ref={mainButton}
             >
               ADD TO NOTE
             </button>
             <dialog
-              id="help_modal"
+              id={`modal + ${uniqueID}`}
               className="modal modal-bottom sm:modal-middle"
             >
               <div className="modal-box">

@@ -70,8 +70,8 @@ function Help() {
               chat.map((item) => {
                 return (
                   <>
-                    <ChatInput text={item.input}/>
-                    <ChatReply text={item.output}/>
+                    <ChatInput text={item.input} uniqueID={item.id}/>
+                    <ChatReply text={item.output} uniqueID={item.id}/>
                   </>
                 );
               })

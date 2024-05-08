@@ -24,7 +24,6 @@ function Home() {
 
   useEffect(() => {
     localStorage.setItem(`note`, JSON.stringify(noteList));
-    console.log(`Local Storage updated`);
   }, [noteList])
 
   return (
