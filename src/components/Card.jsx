@@ -97,7 +97,7 @@ function Card({ crdVal, text, isEditable, id }) {
               <>
                 {crdVal === `5` ? (
                   <button
-                    className="btn btn-sm glass text-[11px]"
+                    className="btn btn-sm glass text-[10px]"
                     onClick={() =>
                       document.getElementById(id + `modal`).showModal()
                     }
