@@ -69,7 +69,7 @@ function Card({ crdVal, text, isEditable, id }) {
     <>
       <div
         style={{ backgroundColor: crdColor[crdVal] }}
-        className="card w-72 text-primary-content aspect-square m-6 ml-1 shadow-2xl"
+        className="card w-72 text-primary-content aspect-square m-6 ml-1 shadow-2xl hover:scale-105 transition duration-500"
       >
         <div className="flex flex-col justify-between card-body">
           {isEditable ? (

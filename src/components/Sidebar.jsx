@@ -26,7 +26,7 @@ function Sidebar() {
   return (
     <>
       <div className="flex flex-col justify-center items-center h-screen w-40 min-w-40 fixed z-10">
-        <div className="flex flex-col justify-start items-center w-[75%] h-[88%] bg-slate-300 bg-opacity-50 rounded-3xl pt-3">
+        <div className="flex flex-col justify-start items-center w-[75%] h-[90%] bg-slate-300 bg-opacity-50 rounded-3xl pt-3">
           <NavLink to="/">
             <h1 className="text-sm font-bold font-sans mt-4 mb-4">
               Quick Note
@@ -153,7 +153,7 @@ function Sidebar() {
         </div>
         {/* Theme Controller */}
         <select
-          className="text-xs w-[75%] h-[5%] bg-slate-300 bg-opacity-50 rounded-3xl mt-3 p-2"
+          className="text-xs w-[75%] h-[4%] bg-slate-300 bg-opacity-0 rounded-3xl mt-3 p-2 focus:border-blue-500 focus:ring-blue-500 focus:outline-none"
           data-choose-theme
         >
           <option disabled value="">
@@ -161,7 +161,10 @@ function Sidebar() {
           </option>
           <option value="cupcake">Default</option>
           <option value="retro">Retro</option>
-          <option value="lofi">Lofi</option>
+          <option value="winter">Winter</option>
+          <option value="lemonade">Lemonade</option>
+          <option value="valentine">Valentine</option>
+          <option value="corporate">Corporate</option>
           <option value="cyberpunk">Cyberpunk</option>
         </select>
       </div>
